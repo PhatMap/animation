@@ -1,0 +1,35 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+}
+
+.button {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: blueviolet;
+  border-color: black;
+  border-radius: 50%;
+  z-index: 1;
+  border: 5px solid white;
+  color: aliceblue;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wheel.spin {
+  animation: spin 2s linear;
+}
