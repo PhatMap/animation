@@ -27,10 +27,10 @@
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(650deg);
   }
 }
 
 .wheel.spin {
-  animation: spin 2s linear;
+  animation: spin 2s forwards;
 }

@@ -47,6 +47,9 @@ const Toggle = () => {
 
   const handleClick = () => {
     setSpin(true);
+    const newArray = array.splice(getRandomNumber(0, array.length - 1), 1);
+    setArray(newArray);
+    dataFactory();
 
     setTimeout(() => {
       setSpin(false);
@@ -68,12 +71,18 @@ const Toggle = () => {
   function dataFactory() {
     const chartData = array.map((element) => ({
         name: "element",
-        value: 400,
+        value: 1,
         label: element,
         labelColor: "blue",
     }))
     setData(chartData)
   }
+
+function getRandomNumber(min, max) {
+  const random = Math.random();
+  const randomNumber = Math.floor(random * (max - min + 1) + min);
+  return randomNumber;
+}
 
   useEffect(() => {
     console.log(array);
