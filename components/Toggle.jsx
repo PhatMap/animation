@@ -4,6 +4,8 @@ import { PieChart, Pie, Sector, Cell } from "recharts";
 
 const Toggle = () => {
   const [data, setData] = useState([]);
+  const [input, setInput] = useState("");
+  const [array, setArray] = useState([]);
   //   { name: "Group A", value: 400, label: "Fuck yeah", labelColor: "red" },
   // { name: "Group B", value: 300, label: "Label B", labelColor: "blue" },
   // { name: "Group C", value: 300, label: "Label C", labelColor: "green" },
@@ -47,17 +49,17 @@ const Toggle = () => {
 
   const handleClick = () => {
     setSpin(true);
-    const newArray = array.splice(getRandomNumber(0, array.length - 1), 1);
-    setArray(newArray);
-    dataFactory();
+
+    const newArray = [...array];
+    const removed = newArray.splice(0,1)
+    console.log(newArray);
+    console.log(removed);
+    setArray(newArray)
 
     setTimeout(() => {
       setSpin(false);
     }, 2000);
   };
-
-  const [input, setInput] = useState("");
-  const [array, setArray] = useState([]);
 
   const handleInput = (event) => {
     setInput(event.target.value);
@@ -70,19 +72,19 @@ const Toggle = () => {
 
   function dataFactory() {
     const chartData = array.map((element) => ({
-        name: "element",
-        value: 1,
-        label: element,
-        labelColor: "blue",
-    }))
-    setData(chartData)
+      name: "element",
+      value: 1,
+      label: element,
+      labelColor: "blue",
+    }));
+    setData(chartData);
   }
 
-function getRandomNumber(min, max) {
-  const random = Math.random();
-  const randomNumber = Math.floor(random * (max - min + 1) + min);
-  return randomNumber;
-}
+  function getRandomNumber(min, max) {
+    const random = Math.random();
+    const randomNumber = Math.floor(random * (max - min + 1) + min);
+    return randomNumber;
+  }
 
   useEffect(() => {
     console.log(array);
