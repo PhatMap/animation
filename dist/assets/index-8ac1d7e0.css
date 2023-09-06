@@ -1,1 +1,0 @@
-.container{width:100vw;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}.button{position:absolute;width:80px;height:80px;background-color:#8a2be2;border-color:#000;border-radius:50%;z-index:1;border:5px solid white;color:#f0f8ff}@keyframes spin{0%{transform:rotate(0)}to{transform:rotate(650deg)}}.wheel.spin{animation:spin 2s forwards}
