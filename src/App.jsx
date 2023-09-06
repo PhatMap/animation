@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import Toggle from './components/Toggle'
+import { useState } from "react";
+import Toggle from "./components/Toggle";
 import { Route, Routes } from "react-router-dom";
-
 
 function App() {
   return (
@@ -13,4 +12,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
